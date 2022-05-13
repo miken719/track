@@ -1,0 +1,31 @@
+.main-content{
+  width: calc(100% / 1);
+   height: 50px;
+  float: left;
+  display: flex;
+}
+.content{
+  width: 100%;
+  display: flex;
+}
+.date-content{
+
+ /* border: 2px solid; */
+ margin: 0px 20px 0px 0px;
+ position: absolute
+}
+.amount{
+  margin: 0px 20px 0px 500px;
+  position: absolute
+}
+.title{
+  margin: 0px 20px 0px 200px;
+  position: absolute
+}
+.input{
+  display: flex;
+
+}
+.inputField{
+  margin: 5px;
+}
