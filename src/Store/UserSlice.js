@@ -19,7 +19,7 @@ const userExpanseSlice = createSlice({
           amount: createExpanse[id].amount,
           date: createExpanse[id].date,
         });
-        console.log("after" , loadedData) 
+        // console.log("after" , loadedData) 
 
 
         state.user = loadedData

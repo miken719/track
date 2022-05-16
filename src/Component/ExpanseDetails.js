@@ -16,7 +16,7 @@ const ExpanseDetails = ({ data }) => {
   const loading = useSelector((state) => state.expanse.loading);
   const dispatch = useDispatch();
   useEffect(() => {
-       
+    //  dispatch(expanseSlice.loadingState(true))
     fetch("https://expense-a77a9-default-rtdb.firebaseio.com/expense.json")
       .then((response) => response.json())
       .then((responseData) => {
@@ -29,7 +29,7 @@ const ExpanseDetails = ({ data }) => {
             date: responseData[key].date,
           });
           dispatch(expanseSlice.addExpanse(loadedData));
-         
+          // dispatch(expanseSlice.loadingState(false))
         }
       });
   },[]);
@@ -57,9 +57,9 @@ const ExpanseDetails = ({ data }) => {
             </TableRow>
           </TableHead>
           {loading ? <CircularProgress style={{float : "right"}}></CircularProgress> : userExpanse.map((items) => (
-            <TableBody>
-              <TableCell>{items.title}</TableCell>
-              <TableCell>{items.amount}</TableCell>
+            <TableBody key={items.id}>
+              <TableCell key={items.id}>{items.title}</TableCell>
+              <TableCell>{items.amount} &#x20b9;</TableCell>
               <TableCell>{items.date}</TableCell>
               <Button variant="contained" onClick={()=>handleRemove(items.id)} style={{background: "#c80000c7", left: "-250px"} }>  Delete <Delete style={{color: "white "}}></Delete></Button>
             </TableBody>
