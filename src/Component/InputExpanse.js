@@ -88,7 +88,6 @@ const InputExpanse = () => {
                   });
                 }}
               ></TextField>
-              
             </div>
 
             <div className="inputField">
@@ -110,7 +109,7 @@ const InputExpanse = () => {
             <Button
               variant="contained"
               style={{ height: "30px", margin: "10px" }}
-              onSubmit={handleSubmit}
+              onClick={handleSubmit}
             > {loading ? <CircularProgress style={{width: "20px" , color: "white"}} ></CircularProgress> : "Submit"  }
               
             </Button>
