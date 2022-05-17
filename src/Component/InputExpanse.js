@@ -58,12 +58,11 @@ const InputExpanse = () => {
 
   return (
     <div>
-      <form name="myExpense" className="input" >
+      <form name="myExpense" className="input" onSubmit={handleSubmit}>
         {show ? (
           <>
             <div className="inputField">
               <TextField
-
                 required
                 type="date"
                 placeholder="Date"
@@ -93,7 +92,7 @@ const InputExpanse = () => {
             <div className="inputField">
               <TextField
                 // type="num"
-                name="num"
+                // name="num"
                 placeholder="Amount"
                 value={userExpanseInput.amount}
                 onChange={(event) => {
@@ -104,14 +103,23 @@ const InputExpanse = () => {
                 }}
                 pattern="[0-9]*"
                 inputmode="numeric"
+                type="number"
               ></TextField>
             </div>
             <Button
+              type="submit"
               variant="contained"
               style={{ height: "30px", margin: "10px" }}
-              onClick={handleSubmit}
-            > {loading ? <CircularProgress style={{width: "20px" , color: "white"}} ></CircularProgress> : "Submit"  }
-              
+              onSubmit={handleSubmit}
+            >
+              {" "}
+              {loading ? (
+                <CircularProgress
+                  style={{ width: "20px", color: "white" }}
+                ></CircularProgress>
+              ) : (
+                "Submit"
+              )}
             </Button>
           </>
         ) : null}

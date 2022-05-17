@@ -56,7 +56,7 @@ const ExpanseDetails = ({ data }) => {
               <TableCell>Date</TableCell>
             </TableRow>
           </TableHead>
-          {loading ? <CircularProgress style={{float : "right"}}></CircularProgress> : userExpanse.map((items) => (
+          {loading ? <> <p>Loading Please Wait...</p> <CircularProgress style={{float : "right" }}></CircularProgress> </>: userExpanse.map((items) => (
             <TableBody key={items.id}>
               <TableCell key={items.id}>{items.title}</TableCell>
               <TableCell>{items.amount} &#x20b9;</TableCell>
